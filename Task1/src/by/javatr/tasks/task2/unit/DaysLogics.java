@@ -1,15 +1,14 @@
 package by.javatr.tasks.task2.unit;
 
-
-import by.javatr.tasks.exception.BadDateValuesException;
+import by.javatr.tasks.exception.DateTimeValuesException;
 
 public class DaysLogics {
     public final static int PROBABLY_LEAP = 4;
     public final static int NOT_LEAP = 100;
     public final static int ALWAYS_LEAP = 400;
-    public static int amountOfDays(int year, int month) throws BadDateValuesException {
+    public static int findAmountOfDays(int year, int month) throws DateTimeValuesException {
         if (month < 0 || month > 12 || year < 0)
-            throw new BadDateValuesException("The year or the month is not valid!");
+            throw new DateTimeValuesException("The year or the month is not valid!");
 
         int days = 0;
         switch (month) {

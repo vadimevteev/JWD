@@ -14,7 +14,7 @@ public class Runner {
 			numbers[i] = DataScanner.enterIntFromConsole();
 		}
 
-		boolean result = EvenNumbersLogics.evenNumbers(numbers);
+		boolean result = EvenNumbersLogics.isConsistTwoEvenNumbers(numbers);
 		System.out.print(result);
 	}
 }
