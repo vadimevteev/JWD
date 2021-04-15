@@ -12,7 +12,7 @@ public class Runner {
 		a = DataScanner.enterDoubleFromConsole();
 
 		double area = AreaLogics.findInscribedArea(a);
-		int quotient = (int)(a / area);
+		int quotient = AreaLogics.findCoefficient(area,a);
 		String result = String.format("%.3f",area);
 
 		System.out.println("Площадь вписанного квадрата: " + result

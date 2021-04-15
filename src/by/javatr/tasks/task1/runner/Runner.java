@@ -12,7 +12,6 @@ public class Runner {
 		a = DataScanner.enterIntFromConsole();
 
 		int result = SquareLogics.findLastDigitSquare(a);
-
 		System.out.println("Последняя цифра квадрата числа: " + result);
 	}
 }

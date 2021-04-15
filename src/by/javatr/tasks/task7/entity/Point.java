@@ -5,8 +5,7 @@ public class Point {
     private double y;
 
     public Point(){
-        this.x = 0;
-        this.y = 0;
+
     }
 
 
