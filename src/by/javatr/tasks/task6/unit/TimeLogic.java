@@ -9,7 +9,7 @@ public class TimeLogic {
     public static final int HOUR_MINUTES = 60;
 
     public static int hours(int seconds) throws DateTimeValuesException {
-        if(seconds < 0 || seconds > DAY_SECONDS)
+        if(seconds < 0)
             throw new DateTimeValuesException("Incorrect seconds");
 
         int result = seconds / HOUR_SECONDS;
@@ -17,7 +17,7 @@ public class TimeLogic {
     }
 
     public static int minutes(int seconds) throws DateTimeValuesException {
-        if(seconds < 0 || seconds > DAY_SECONDS)
+        if(seconds < 0)
             throw new DateTimeValuesException("Incorrect seconds");
 
         int result = (seconds / HOUR_MINUTES) - hours(seconds) * HOUR_MINUTES;
@@ -25,7 +25,7 @@ public class TimeLogic {
     }
 
     public static int seconds(int seconds) throws DateTimeValuesException {
-        if(seconds < 0 || seconds > DAY_SECONDS)
+        if(seconds < 0)
             throw new DateTimeValuesException("Incorrect seconds");
 
         int result = seconds % HOUR_MINUTES;

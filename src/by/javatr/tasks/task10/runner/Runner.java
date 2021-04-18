@@ -3,6 +3,8 @@ package by.javatr.tasks.task10.runner;
 import by.javatr.tasks.scanner.DataScanner;
 import by.javatr.tasks.task10.unit.FunctionLogics;
 
+import java.util.*;
+
 public class Runner {
 
     public static void main(String... args){
@@ -17,8 +19,23 @@ public class Runner {
         System.out.print("Введите шаг: ");
         h = DataScanner.enterDoubleFromConsole();
 
-        String result = String.valueOf(FunctionLogics.createTable(a,b,h));
+        Map<Double, Double> function = FunctionLogics.FunctionValues(a,b,h);
+        String result = String.valueOf(createTable(function));
 
         System.out.println(result);
+    }
+
+    public static StringBuilder createTable(Map<Double, Double> function){
+
+        StringBuilder table = new StringBuilder("x\t\ty\n");
+        List<Double> keys = new ArrayList<>(function.keySet());
+        Collections.sort(keys);
+        for(double key : keys){
+            table.append(String.format("%.3f", key))
+                    .append("\t")
+                    .append(String.format("%.3f", function.get(key)))
+                    .append("\n");
+        }
+        return table;
     }
 }

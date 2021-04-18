@@ -19,13 +19,4 @@ public class PointLogics {
 
         return result;
     }
-
-    public static String findMessage(int result){
-        String message = "Точки равноудалены от центра";
-        if(result > 0)
-            message = "Точка А лежит ближе к центру";
-        else if(result < 0)
-            message = "Точка B лежит ближе к центру";
-        return message;
-    }
 }

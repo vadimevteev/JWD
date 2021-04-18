@@ -1,26 +1,25 @@
 package by.javatr.tasks.task10.unit;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FunctionLogics {
 
-    public static StringBuilder createTable(double a, double b, double h){
+    public static Map<Double, Double> FunctionValues(double a, double b, double h){
 
-        StringBuilder result = new StringBuilder("x\t\ty\n");
+        h = Math.abs(h);
         if( b < a ){
             double x = b;
             b = a;
             a = x;
         }
 
+        Map<Double, Double> function = new HashMap<>();
         while ( a<= b){
             double y = Math.tan(a);
-            result.append(String.format("%.3f", a))
-                    .append("\t")
-                    .append(String.format("%.3f", y))
-                    .append("\n");
+            function.put(a,y);
             a += h;
         }
-        return result;
+        return function;
     }
 }

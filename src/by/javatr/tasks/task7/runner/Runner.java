@@ -26,10 +26,19 @@ public class Runner {
 		Point b = new Point(x2,y2);
 
 		int result = PointLogics.checkNearest(a,b);
-		String message = PointLogics.findMessage(result);
+		String message = findMessage(result);
 
 		System.out.println(message);
 
+	}
+
+	public static String findMessage(int result){
+		String message = "Точки равноудалены от центра";
+		if(result > 0)
+			message = "Точка А лежит ближе к центру";
+		else if(result < 0)
+			message = "Точка B лежит ближе к центру";
+		return message;
 	}
 }
 
